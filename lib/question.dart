@@ -37,7 +37,7 @@ class Question extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        Image.network(images[questionIndex]),
+      Image.network(images[questionIndex]),
       ],
     );
   }

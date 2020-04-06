@@ -34,7 +34,6 @@ class _QuizCardState extends State<QuizCard> {
     setState(() {
       _questionIndex = (_questionIndex + 1) % 4;
     });
-
     print('Answered Question Number ' + (_questionIndex + 1).toString());
   }
 
@@ -47,22 +46,10 @@ class _QuizCardState extends State<QuizCard> {
   Widget build(BuildContext context) {
     return Column(children: [
       Question(_questionIndex),
-      RaisedButton(
-        child: Answer(_questionIndex, 0),
-        onPressed: _answerQuestion,
-      ),
-      RaisedButton(
-        child: Answer(_questionIndex, 1),
-        onPressed: _answerQuestion,
-      ),
-      RaisedButton(
-        child: Answer(_questionIndex, 2),
-        onPressed: _answerQuestion,
-      ),
-      RaisedButton(
-        child: Answer(_questionIndex, 3),
-        onPressed: _answerQuestion,
-      )
+      Answer(_questionIndex, 0),
+      Answer(_questionIndex, 1),
+      Answer(_questionIndex, 2),
+      Answer(_questionIndex, 3),
     ]);
   }
 }
