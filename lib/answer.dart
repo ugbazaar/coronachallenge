@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
   final answers = [
-    ['Maybe', 'Yes', 'Absolutely Yes!', 'Fuck Yeah!'],
-    ['Uneducated', 'Jungle Pass', 'Street Pass', 'Matric Fail'],
-    ['50000', '60000', '70000', '80000'],
-    ['20', '30', '40', '50']
+    ['Tilicho', 'Shey Phoksundo', 'It\'s not a lake!', 'Rara'],
+    ['Phewa', 'Begnas', 'Gokyo', 'Shey Phoksundo'],
+    ['Silung Dada', 'Kanyam Dada', 'Love Dada', 'Kakani Dada'],
+    ['Kuri', 'Jiri', 'Tori', 'Mori']
   ];
 
   final int questionIndex;
