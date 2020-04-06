@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
-
   final message =
       'My brother told me a month ago how Corona will be the fall of this government. I did not understand then.' +
           'But today I witness wrong decisions, again and again, until the price we have to pay will be irresversible.' +
@@ -15,10 +14,8 @@ class Question extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var formattedQuestion = 'Question ' +
-        (index + 1).toString() +
-        ': ' +
-        question;
+    var formattedQuestion =
+        'Question ' + (index + 1).toString() + ': ' + question;
 
     return Column(
       children: <Widget>[
@@ -31,7 +28,7 @@ class Question extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-      Image.network(media),
+        if (media != null) Image.network(media),
       ],
     );
   }
