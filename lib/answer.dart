@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
-  final answers = [
-    ['Tilicho', 'Shey Phoksundo', 'It\'s not a lake!', 'Rara'],
-    ['Phewa', 'Begnas', 'Gokyo', 'Shey Phoksundo'],
-    ['Silung Dada', 'Kanyam Dada', 'Love Dada', 'Kakani Dada'],
-    ['Kuri', 'Jiri', 'Tori', 'Mori']
-  ];
+  final String answer;
+  final Function selectHandler;
 
-  final int questionIndex;
-  final int answerIndex;
 
-  void _answerQuestion() {
-    // Do nothing
-  }
-
-  Answer(this.questionIndex, this.answerIndex);
+  Answer(this.selectHandler, this.answer);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +14,9 @@ class Answer extends StatelessWidget {
       width: double.infinity,
       child: RaisedButton(
         color: Colors.lightBlue[300],
-        child: Text(answers[questionIndex][0]),
-        onPressed: _answerQuestion,
+        child: Text(answer),
+        onPressed:  selectHandler
+,
       ) ,) ;
   }
 }

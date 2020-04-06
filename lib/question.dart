@@ -1,30 +1,24 @@
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
-  final int questionIndex;
 
-  final questions = [
-    'Name this frozen lake:',
-    'Name this lake:',
-    'Identify this popular dada:',
-    'Name this popular tourist destination:'
-  ];
+  final message =
+      'My brother told me a month ago how Corona will be the fall of this government. I did not understand then.' +
+          'But today I witness wrong decisions, again and again, until the price we have to pay will be irresversible.' +
+          '\n\nI hope, then, we will rise rise beyond the parties and demand things for ourselves than for the party leaders!';
 
-  final images = [
-    'https://static.ugbazaar.com/uploads/quiz/question/medium/62-name-this-frozen-lake.jpeg',
-    'https://static.ugbazaar.com/uploads/quiz/question/medium/63-name-this-lake.jpeg',
-    'https://static.ugbazaar.com/uploads/quiz/question/medium/60-name-this-popular-dada.jpeg',
-    'https://static.ugbazaar.com/uploads/quiz/question/medium/53-name-this-popular-destination.jpeg'
-  ];
+  final int index;
+  final String question;
+  final String media;
 
-  Question(this.questionIndex);
+  Question(this.index, this.question, this.media);
 
   @override
   Widget build(BuildContext context) {
     var formattedQuestion = 'Question ' +
-        (questionIndex + 1).toString() +
+        (index + 1).toString() +
         ': ' +
-        questions[questionIndex];
+        question;
 
     return Column(
       children: <Widget>[
@@ -37,7 +31,7 @@ class Question extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-      Image.network(images[questionIndex]),
+      Image.network(media),
       ],
     );
   }

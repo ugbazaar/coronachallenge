@@ -28,6 +28,13 @@ class QuizCard extends StatefulWidget {
 }
 
 class _QuizCardState extends State<QuizCard> {
+  final questions = [
+    {'question': 'Name this frozen lake:', 'options': ['Tilicho', 'Shey Phoksundo', 'It\'s not a lake!', 'Rara'], 'media': 'https://static.ugbazaar.com/uploads/quiz/question/medium/62-name-this-frozen-lake.jpeg'},
+    {'question': 'What is the color of sky?' , 'options': ['Red', 'Yellow', 'Blue', 'Green', 'media']: null},
+    {'question': 'Name this lake:', 'options': ['Phewa', 'Begnas', 'Gokyo', 'Shey Phoksundo'], 'media': 'https://static.ugbazaar.com/uploads/quiz/question/medium/63-name-this-lake.jpeg'},
+    {'question': 'Identify this popular dada:', 'options':  ['Silung Dada', 'Kanyam Dada', 'Love Dada', 'Kakani Dada'], 'media': 'https://static.ugbazaar.com/uploads/quiz/question/medium/60-name-this-popular-dada.jpeg'},
+    {'question': 'Name this popular tourist destination:', 'options':  ['Kuri', 'Jiri', 'Tori', 'Mori'], 'media': 'https://static.ugbazaar.com/uploads/quiz/question/medium/53-name-this-popular-destination.jpeg'}
+  ];
   var _questionIndex = 0;
 
   void _answerQuestion() {
@@ -37,19 +44,14 @@ class _QuizCardState extends State<QuizCard> {
     print('Answered Question Number ' + (_questionIndex + 1).toString());
   }
 
-  var message =
-      'My brother told me a month ago how Corona will be the fall of this government. I did not understand then.' +
-          'But today I witness wrong decisions, again and again, until the price we have to pay will be irresversible.' +
-          '\n\nI hope, then, we will rise rise beyond the parties and demand things for ourselves than for the party leaders!';
-
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Question(_questionIndex),
-      Answer(_questionIndex, 0),
-      Answer(_questionIndex, 1),
-      Answer(_questionIndex, 2),
-      Answer(_questionIndex, 3),
+      Question(_questionIndex, questions[_questionIndex]['question'], questions[_questionIndex]['media']),
+
+      ...(questions[_questionIndex]['options'] as List<String>).map((option) {
+        return Answer(_answerQuestion, option);
+      }).toList(),
     ]);
   }
 }
