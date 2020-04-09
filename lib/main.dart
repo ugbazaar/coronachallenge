@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import './quiz.dart';
+import './result.dart';
 
 void main() => runApp(QuizApp());
 
@@ -14,8 +14,7 @@ class QuizApp extends StatefulWidget {
 
 class _QuizAppState extends State<QuizApp> {
   var _questionIndex = 0;
-
-  final questions = const [
+  final _questions = const [
     {
       'question': 'Name this frozen lake:',
       'options': ['Tilicho', 'Shey Phoksundo', 'It\'s not a lake!', 'Rara'],
@@ -53,7 +52,6 @@ class _QuizAppState extends State<QuizApp> {
   ];
 
   void _answerQuestion() {
-    // _makeGetRequest();
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
@@ -66,16 +64,14 @@ class _QuizAppState extends State<QuizApp> {
       title: 'Quiz App Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Corona Time Day 3!'),
+          title: Text('Corona Time Day 4!'),
         ),
-        body: Column(children: [
-          Question(_questionIndex, questions[_questionIndex]['question'],
-              questions[_questionIndex]['media']),
-          ...(questions[_questionIndex]['options'] as List<String>)
-              .map((option) {
-            return Answer(_answerQuestion, option);
-          }).toList(),
-        ]),
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                questionIndex: _questionIndex,
+                questions: _questions,
+                answerQuestion: _answerQuestion)
+            : Result(),
       ),
     );
   }
