@@ -30,6 +30,7 @@ class Result extends StatelessWidget {
     } else {
       text += 'You are from Mars!';
     }
+    return 'आज भक्खर दुइ जना पक्डियो रे ओलीको कार्टून बनाएको मा।';
     return text + '\nScore: ' + resultScore.toString();
   }
 
@@ -39,8 +40,15 @@ class Result extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(
+            'Oops! Cannot display the result!',
+            style: TextStyle(
+                fontSize: 25, fontStyle: FontStyle.italic, color: Colors.red),
+            textAlign: TextAlign.center,
+          ),
+          Image.asset('assets/mafia.png'),
+          Text(
             resultPhrase,
-            style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           FlatButton(

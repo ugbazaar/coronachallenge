@@ -15,66 +15,65 @@ class QuizApp extends StatefulWidget {
 class _QuizAppState extends State<QuizApp> {
   final _questions = const [
     {
-      'question': 'Name this frozen lake:',
-      'options': [
-        {'value': 'Tilicho', 'point': 10},
-        {'value': 'Shey Phoksundo', 'point': 5},
-        {'value': 'It\'s not a lake!', 'point': 2},
-        {'value': 'Rara', 'point': 1}
-      ],
-      'media':
-          'https://static.ugbazaar.com/uploads/quiz/question/medium/62-name-this-frozen-lake.jpeg'
-    },
-    {
-      'question': 'What is the color of sky?',
+      'question': 'What is your favorite color?',
       'options': [
         {'value': 'Red', 'point': 10},
-        {'value': 'Yellow', 'point': 5},
+        {'value': 'Green', 'point': 5},
         {'value': 'Blue', 'point': 2},
-        {'value': 'Green', 'point': 1}
+        {'value': 'None', 'point': 1}
       ],
       'media': null
     },
     {
-      'question': 'Name this lake:',
+      'question': 'Which is your favorite wallet?',
       'options': [
-        {'value': 'Phewa', 'point': 10},
-        {'value': 'Begnas', 'point': 5},
-        {'value': 'Gokyo', 'point': 2},
-        {'value': 'Shey Phoksundo', 'point': 1}
-      ],
-      'media':
-          'https://static.ugbazaar.com/uploads/quiz/question/medium/63-name-this-lake.jpeg'
-    },
-    {
-      'question': 'Your ancestors are apes?',
-      'options': [
-        {'value': 'True', 'point': 10},
-        {'value': 'False', 'point': 0},
+        {'value': 'Commission', 'point': 5},
+        {'value': 'BigMoney', 'point': 2},
+        {'value': 'eTewa', 'point': 10},
+        {'value': 'OnlyCrore', 'point': 1}
       ],
       'media': null
     },
     {
-      'question': 'Identify this popular dada:',
+      'question': 'How many times have you been to Singha Durbar in 2019?',
       'options': [
-        {'value': 'Silung Dada', 'point': 10},
-        {'value': 'Kanyam Dada', 'point': 5},
-        {'value': 'Love Dada', 'point': 2},
-        {'value': 'Kakani Dada', 'point': 1}
+        {'value': 'More than 10.', 'point': 10},
+        {'value': 'More than 5', 'point': 5},
+        {'value': 'Once', 'point': 2},
+        {'value': 'Never', 'point': 1}
       ],
-      'media':
-          'https://static.ugbazaar.com/uploads/quiz/question/medium/60-name-this-popular-dada.jpeg'
+      'media': null
     },
     {
-      'question': 'Name this popular tourist destination:',
+      'question': 'Whom do you think should get Karuna Blessing, first',
       'options': [
-        {'value': 'Kuri', 'point': 10},
-        {'value': 'Jiri', 'point': 5},
-        {'value': 'Tori', 'point': 2},
-        {'value': 'Mori', 'point': 1}
+        {'value': 'KP Oli', 'point': 10},
+        {'value': 'Ishwor Pokharel', 'point': 10},
+        {'value': 'Yogesh Bhattarai', 'point': 0},
+        {'value': 'Biddhya Bhandari', 'point': 10},
       ],
-      'media':
-          'https://static.ugbazaar.com/uploads/quiz/question/medium/53-name-this-popular-destination.jpeg'
+      'media': null
+    },
+    {
+      'question':
+          'How much was the payment gateway bought for by Nepal government in 2018 to make it national payment gateway?',
+      'options': [
+        {'value': '25 crore', 'point': 10},
+        {'value': '15 crore', 'point': 5},
+        {'value': '5 crore', 'point': 2},
+        {'value': '1 crore', 'point': 1}
+      ],
+      'media': null
+    },
+    {
+      'question': 'Which is your favorite hangout spot?',
+      'options': [
+        {'value': 'Baluwatar', 'point': 10},
+        {'value': 'Commsiontar', 'point': 10},
+        {'value': 'Sigha Durbar', 'point': 5},
+        {'value': 'Balkot', 'point': 1}
+      ],
+      'media': null
     }
   ];
 
@@ -102,7 +101,10 @@ class _QuizAppState extends State<QuizApp> {
       title: 'Quiz App Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Corona Time Day 4!'),
+          title: Text(
+            'Which political mafia of Nepal are you?',
+            textAlign: TextAlign.center,
+          ),
         ),
         body: _questionIndex < _questions.length
             ? Quiz(
